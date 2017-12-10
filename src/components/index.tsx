@@ -1,8 +1,5 @@
 import { createStore } from 'redux';
-import todoApp from './reducers';
-import { State, initialState } from './reducers';
-
-
+import reducer, { initialState, State } from './reducer';
 
 // createStore(reducer: Reducer<State>, initialState?: State, [enhancer])
-export const store = createStore<State>(todoApp, initialState);
+export const store = createStore<State>(reducer, initialState);
