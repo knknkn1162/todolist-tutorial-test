@@ -5,4 +5,4 @@ import { State, initialState } from './reducers';
 
 
 // createStore(reducer: Reducer<State>, initialState?: State, [enhancer])
-const store = createStore<State>(todoApp, initialState);
+export const store = createStore<State>(todoApp, initialState);
