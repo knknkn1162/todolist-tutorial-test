@@ -5,8 +5,6 @@ export type TOGGLE_TODO = typeof TOGGLE_TODO;
 export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
 export type SET_VISIBILITY_FILTER = typeof SET_VISIBILITY_FILTER;
 
-// export type ACTION_TYPE = ADD_TODO | TOGGLE_TODO | SET_VISIBILITY_FILTER;
-
 export enum VISIBILITY_FILTERS {
   SHOW_ALL= 'SHOW_ALL',
   SHOW_COMPLETED= 'SHOW_COMPLETED',
@@ -28,6 +26,7 @@ export interface SetVisibilityFilter {
   type: SET_VISIBILITY_FILTER;
 }
 
+// implement `type` attribute
 export type TodoAction = AddTodo | ToggleTodo | SetVisibilityFilter;
 
 export function addTodo(text: string): AddTodo {
