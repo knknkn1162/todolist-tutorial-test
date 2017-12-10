@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "fix": "tslint --fix './*.ts{,x}'",
-    "lint": "tslint --format stylish './*.ts{,x}'",
+    "fix": "tslint --fix './src/**/*.ts{,x}'",
+    "lint": "tslint --format stylish './src/**/*.ts{,x}'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "pack": "webpack && open ./index.html",
     "build": "npm run lint && npm run pack"

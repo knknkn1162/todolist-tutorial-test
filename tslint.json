@@ -1,6 +1,8 @@
 {
-  "extends": ["tslint:latest", "tslint-react, tslint-config-airbnb"],
+  "extends": ["tslint:latest", "tslint-react", "tslint-config-airbnb"],
   "rules": {
-    "jsx-wrap-multiline": false
+    "jsx-wrap-multiline": false,
+    "interface-name": [true, "never-prefix"],
+    "object-literal-shorthand": [true, "never"]
   }
 }
