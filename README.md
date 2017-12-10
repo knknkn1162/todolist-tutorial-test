@@ -36,5 +36,5 @@ npm install --save redux react-redux @types/react-redux
 see https://github.com/facebook/jest#using-typescript:
 
 ```bash
-npm install --save-dev ts-jest @types/jest
+npm install --save-dev ts-jest @types/jest jest
 ```

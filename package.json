@@ -6,7 +6,7 @@
   "scripts": {
     "fix": "tslint --fix './src/**/*.ts{,x}'",
     "lint": "tslint --format stylish './src/**/*.ts{,x}'",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "pack": "webpack && open ./index.html",
     "build": "npm run lint && npm run pack"
   },
@@ -39,6 +39,7 @@
   "devDependencies": {
     "@types/jest": "^21.1.8",
     "awesome-typescript-loader": "^3.4.1",
+    "jest": "^21.2.1",
     "source-map-loader": "^0.2.3",
     "ts-jest": "^21.2.4",
     "tslint": "^5.8.0",

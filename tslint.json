@@ -3,6 +3,7 @@
   "rules": {
     "jsx-wrap-multiline": false,
     "interface-name": [true, "never-prefix"],
-    "object-literal-shorthand": [true, "never"]
+    "object-literal-shorthand": [false],
+    "object-literal-sort-keys": [true, "ignore-case", "match-declaration-order"]
   }
 }
