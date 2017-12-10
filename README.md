@@ -31,3 +31,10 @@ touch tslint.json
 npm install --save redux react-redux @types/react-redux
 ```
 
++ test redux with jest
+
+see https://github.com/facebook/jest#using-typescript:
+
+```bash
+npm install --save-dev ts-jest @types/jest
+```

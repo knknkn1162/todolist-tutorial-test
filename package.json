@@ -37,11 +37,25 @@
     "redux": "^3.7.2"
   },
   "devDependencies": {
+    "@types/jest": "^21.1.8",
     "awesome-typescript-loader": "^3.4.1",
     "source-map-loader": "^0.2.3",
+    "ts-jest": "^21.2.4",
     "tslint": "^5.8.0",
     "tslint-config-airbnb": "^5.4.2",
     "tslint-react": "^3.2.0",
     "typescript": "^2.6.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
   }
 }
