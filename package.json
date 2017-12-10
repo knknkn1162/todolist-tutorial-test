@@ -6,9 +6,11 @@
   "scripts": {
     "fix": "tslint --fix './src/**/*.ts{,x}'",
     "lint": "tslint --format stylish './src/**/*.ts{,x}'",
-    "test": "jest",
+    "test": "npm run clean && jest",
     "pack": "webpack && open ./index.html",
-    "build": "npm run lint && npm run pack"
+    "clean": "rm -r ./dist && mkdir dist",
+    "build": "npm run clean && npm run lint && npm run pack",
+    "single": "tsc -p ."
   },
   "repository": {
     "type": "git",

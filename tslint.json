@@ -4,6 +4,14 @@
     "jsx-wrap-multiline": false,
     "interface-name": [true, "never-prefix"],
     "object-literal-shorthand": [false],
-    "object-literal-sort-keys": [true, "ignore-case", "match-declaration-order"]
+    "object-literal-sort-keys": [true, "ignore-case", "match-declaration-order"],
+    "ordered-imports": [
+      true,
+      {
+        "import-sources-order": "any",
+        "named-imports-order": "any"
+      }
+    ],
+    "no-duplicate-imports": false
   }
 }
