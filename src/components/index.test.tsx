@@ -1,10 +1,9 @@
-import { addTodo, setVisibilityFilter, toggleTodo ,VISIBILITY_FILTERS } from './actions';
+import { addTodo, setVisibilityFilter, toggleTodo ,VisibilityFilter } from './actions';
 import { store } from './index';
-import { initialState, State } from './reducer';
+import { initialState, State, todoApp } from './reducer';
 
-it('dd', () => {
+it('test store.getState', () => {
   const state: State = store.getState();
   const expectedState = initialState;
-
   expect(state).toEqual(expectedState);
 });

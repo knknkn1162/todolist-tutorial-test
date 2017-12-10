@@ -1,11 +1,16 @@
 import { List } from 'immutable';
-import {
-  ADD_TODO, AddTodo,
-  SET_VISIBILITY_FILTER, SetVisibilityFilter,
+/*
+import { ADD_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER }
+  ADD_TODO,
+  SET_VISIBILITY_FILTER, AddTodo,
+  SetVisibilityFilter,
   TodoAction,
   TOGGLE_TODO, ToggleTodo,
-  VISIBILITY_FILTERS,
-  } from './actions';
+  VisibilityFilter,
+} from './actions';
+*/
+import { StateType, VisibilityFilter } from './actions';
+import { TodoAction, AddTodo, ToggleTodo, SetVisibilityFilter } from './actions';
 
 import { combineReducers, Reducer } from 'redux';
 
@@ -15,21 +20,22 @@ export interface Todo {
 }
 
 export interface State {
-  visibilityFilter: VISIBILITY_FILTERS;
+  visibilityFilter: VisibilityFilter;
   todos: List<Todo>;
 }
 
 // note that State can't be **immutable** so, set const.
 export const initialState: State = {
-  visibilityFilter: VISIBILITY_FILTERS.SHOW_ALL,
-  todos: List(),
+  visibilityFilter: VisibilityFilter.SHOW_ALL,
+  todos: List<Todo>(),
 };
 
 // reducers that might change visibilityFilter
 // and returns the VISIBILITY_FILTERS object that the **new** state consists of.
-function visibilityFilter(state: VISIBILITY_FILTERS, action: TodoAction): VISIBILITY_FILTERS {
+// **SET INITIAL STATE**
+function filters(state = VisibilityFilter.SHOW_ALL, action: TodoAction): VisibilityFilter {
   switch (action.type) {
-    case SET_VISIBILITY_FILTER:
+    case StateType.SET_VISIBILITY_FILTER:
       return (action as SetVisibilityFilter).filter;
     default:
       return state;
@@ -38,14 +44,15 @@ function visibilityFilter(state: VISIBILITY_FILTERS, action: TodoAction): VISIBI
 
 // reducers that might change Todos
 // and returns the List<Todo> that the **new** state consists of.
-function todos(state: List<Todo>, action: TodoAction): List<Todo> {
+// **SET INITIAL STATE**
+function todos(state = List<Todo>(), action: TodoAction): List<Todo> {
   switch (action.type) {
-    case ADD_TODO:
+    case StateType.ADD_TODO:
       return state.push({
         text: (action as AddTodo).text,
         completed: false,
       });
-    case TOGGLE_TODO:
+    case StateType.TOGGLE_TODO:
       return state.update(
         (action as ToggleTodo).index,
         todo => ({
@@ -53,13 +60,15 @@ function todos(state: List<Todo>, action: TodoAction): List<Todo> {
           completed: !todo.completed,
         }),
       );
+    default:
+      return state;
   }
 }
 
 // type Reducer<S, A> = (state: S, action: A) => S
-export const todoApp: Reducer<State> = combineReducers({
-  visibilityFilter,
-  todos,
+export const todoApp = combineReducers<State>({
+  visibilityFilter: filters,
+  todos: todos,
 });
 
 export default todoApp;

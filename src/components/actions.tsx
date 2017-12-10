@@ -1,11 +1,10 @@
-export const ADD_TODO = 'ADD_TODO';
-export type ADD_TODO = typeof ADD_TODO;
-export const TOGGLE_TODO = 'TOGGLE_TODO';
-export type TOGGLE_TODO = typeof TOGGLE_TODO;
-export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
-export type SET_VISIBILITY_FILTER = typeof SET_VISIBILITY_FILTER;
+export enum StateType {
+  ADD_TODO = 'ADD_TODO',
+  TOGGLE_TODO = 'TOGGLE_TODO',
+  SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER',
+}
 
-export enum VISIBILITY_FILTERS {
+export enum VisibilityFilter {
   SHOW_ALL= 'SHOW_ALL',
   SHOW_COMPLETED= 'SHOW_COMPLETED',
   SHOW_ACTIVATE= 'SHOW_ACTIVE',
@@ -13,17 +12,17 @@ export enum VISIBILITY_FILTERS {
 
 export interface AddTodo {
   text: string;
-  type: ADD_TODO;
+  type: StateType.ADD_TODO;
 }
 
 export interface ToggleTodo {
   index: number;
-  type: TOGGLE_TODO;
+  type: StateType.TOGGLE_TODO;
 }
 
 export interface SetVisibilityFilter {
-  filter: VISIBILITY_FILTERS;
-  type: SET_VISIBILITY_FILTER;
+  filter: VisibilityFilter;
+  type: StateType.SET_VISIBILITY_FILTER;
 }
 
 // implement `type` attribute
@@ -32,20 +31,20 @@ export type TodoAction = AddTodo | ToggleTodo | SetVisibilityFilter;
 export function addTodo(text: string): AddTodo {
   return {
     text: text,
-    type: ADD_TODO,
+    type: StateType.ADD_TODO,
   };
 }
 
 export function toggleTodo(index: number): ToggleTodo {
   return {
     index: index,
-    type: TOGGLE_TODO,
+    type: StateType.TOGGLE_TODO,
   };
 }
 
-export function setVisibilityFilter(filter: VISIBILITY_FILTERS): SetVisibilityFilter {
+export function setVisibilityFilter(filter: VisibilityFilter): SetVisibilityFilter {
   return {
     filter: filter,
-    type: SET_VISIBILITY_FILTER,
+    type: StateType.SET_VISIBILITY_FILTER,
   };
 }
