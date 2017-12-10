@@ -1,0 +1,6 @@
+{
+  "extends": ["tslint:latest", "tslint-react, tslint-config-airbnb"],
+  "rules": {
+    "jsx-wrap-multiline": false
+  }
+}
