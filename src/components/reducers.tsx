@@ -11,13 +11,13 @@ export interface Todo {
   completed: boolean;
 }
 
-interface State {
+export interface State {
   visibilityFilter: VISIBILITY_FILTERS;
   todos: List<Todo>;
 }
 
 // note that State can't be **immutable** so, set const.
-const initialState: State = {
+export const initialState: State = {
   visibilityFilter: VISIBILITY_FILTERS.SHOW_ALL,
   todos: List(),
 }
