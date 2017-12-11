@@ -26,7 +26,7 @@ touch tslint.json
 Assume the editor is VScode.
 
 1. run the typescript build via `tsc -p .`, or Run Build Task (⇧⌘B).
-Note) you might set `["es6", "dom"]`@`compilerOption > lib` in tsconfig.json, otherwise, the following error occurs:
+Note) you should set `"lib": ["es6", "dom"]` @ `compilerOption` in tsconfig.json. Otherwise, the following error  might occur:
 
 ```bash
 node_modules/@types/jest/index.d.ts(1053,34): error TS2304: Cannot find name 'Set'.
