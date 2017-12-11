@@ -1,7 +1,6 @@
 import { List } from "immutable";
 import { StateType, VisibilityFilter } from "./actions";
-import { TodoAction, AddTodo, ToggleTodo, SetVisibilityFilter } from "./actions";
-
+import { TodoAction } from "./actions";
 import { combineReducers, Reducer } from "redux";
 
 export interface Todo {
