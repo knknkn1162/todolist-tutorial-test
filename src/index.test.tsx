@@ -1,7 +1,7 @@
-import { addTodo, setVisibilityFilter, toggleTodo ,VisibilityFilter } from './actions';
-import { store } from './index';
-import { initialState, State, todoApp } from './reducer';
-import { List } from 'immutable';
+import { addTodo, setVisibilityFilter, toggleTodo ,VisibilityFilter } from "./actions";
+import { store } from "./index";
+import { initialState, State, todoApp } from "./reducers";
+import { List } from "immutable";
 
 it('test store.getState', () => {
   let state: State = store.getState();

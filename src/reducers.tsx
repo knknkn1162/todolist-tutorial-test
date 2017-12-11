@@ -1,22 +1,13 @@
-import { List } from 'immutable';
-/*
-import { ADD_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER }
-  ADD_TODO,
-  SET_VISIBILITY_FILTER, AddTodo,
-  SetVisibilityFilter,
-  TodoAction,
-  TOGGLE_TODO, ToggleTodo,
-  VisibilityFilter,
-} from './actions';
-*/
-import { StateType, VisibilityFilter } from './actions';
-import { TodoAction, AddTodo, ToggleTodo, SetVisibilityFilter } from './actions';
+import { List } from "immutable";
+import { StateType, VisibilityFilter } from "./actions";
+import { TodoAction, AddTodo, ToggleTodo, SetVisibilityFilter } from "./actions";
 
-import { combineReducers, Reducer } from 'redux';
+import { combineReducers, Reducer } from "redux";
 
 export interface Todo {
-  text: string;
   completed: boolean;
+  index: number;
+  text: string;
 }
 
 export interface State {
@@ -36,7 +27,7 @@ export const initialState: State = {
 function filters(state = VisibilityFilter.SHOW_ALL, action: TodoAction): VisibilityFilter {
   switch (action.type) {
     case StateType.SET_VISIBILITY_FILTER:
-      return (action as SetVisibilityFilter).filter;
+      return action.filter; // action as VisibilityFilter
     default:
       return state;
   }
@@ -49,13 +40,14 @@ function todos(state = List<Todo>(), action: TodoAction): List<Todo> {
   switch (action.type) {
     case StateType.ADD_TODO:
       return state.push({
-        text: (action as AddTodo).text,
+        index: action.index,
+        text: action.text,
         completed: false,
       });
     case StateType.TOGGLE_TODO:
       return state.update(
-        (action as ToggleTodo).index,
-        todo => ({
+        action.index,
+        (todo) => ({
           ...todo,
           completed: !todo.completed,
         }),
