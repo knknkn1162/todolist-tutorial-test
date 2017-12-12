@@ -13,7 +13,7 @@ export interface LinkProps {
 export interface TodoProps {
   text: string;
   completed: boolean;
-  onclick: () => void;
+  onclick?: () => void;
 }
 
 export interface TodoListProps {
@@ -27,14 +27,10 @@ export interface AddTodoProps {
   onsubmit: () => void;
 }
 
-/**
- * <Todo />
- */
-
-export function Todo({ text, completed, onclick }: TodoProps): JSX.Element {
+export function Todo({ text, completed }: TodoProps): JSX.Element {
   return (
     <li
-      onClick={onclick}
+      // onClick={onclick}
       style={{ textDecoration: completed ? "line-through" : "none" }}
     >
       {text}
@@ -42,10 +38,7 @@ export function Todo({ text, completed, onclick }: TodoProps): JSX.Element {
    );
 }
 
-/**
- *
- * <TodoList />
- */
+/*
 export function TodoList({todos, onTodoClick}: TodoListProps): JSX.Element {
   return (
     <ul>
@@ -53,10 +46,6 @@ export function TodoList({todos, onTodoClick}: TodoListProps): JSX.Element {
     </ul>
   );
 }
-
-/**
- * <Footer />
- */
 
 export interface FooterOwnProps {
   filter: VisibilityFilter;
@@ -82,9 +71,6 @@ export function Footer(): JSX.Element {
   );
 }
 
-/**
- * <Link />
- */
 export function Link({active, children, onclick}: LinkProps): JSX.Element {
   if (active) {
     return (<span>{children}</span>);
@@ -99,3 +85,4 @@ export function Link({active, children, onclick}: LinkProps): JSX.Element {
     </a>
   );
 }
+*/
