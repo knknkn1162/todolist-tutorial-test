@@ -1,13 +1,10 @@
 import * as React from "react";
-import { Footer } from "./components";
-import AddTodo from "./containers/AddTodo";
-import VisibleTodoList from "./containers/VisibleTodoList";
+import Todo from "./containers/Todo";
+
 function App() {
   return (
     <div>
-      <AddTodo />
-      <VisibleTodoList />
-      <Footer />
+      <Todo />
     </div>
   );
 }
