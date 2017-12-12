@@ -55,6 +55,8 @@ node_modules/@types/jest/index.d.ts(1053,34): error TS2304: Cannot find name 'Se
 
 ## introduce react-redux
 
+see also https://github.com/Microsoft/TypeScript-React-Starter
+
 + installation
 
 ```bash
@@ -82,4 +84,13 @@ Tests:       1 passed, 1 total
 Snapshots:   0 total
 Time:        3.238s
 Ran all test suites.
-``
+```
+
++ writing tests with Jest
+
+
+```bash
+# you should load `@types/enzyme-adapter-react-16` in typescript.
+npm install --save-dev enzyme @types/enzyme react-addons-test-utils enzyme-adapter-react-16 @types/enzyme-adapter-react-16
+```
+
