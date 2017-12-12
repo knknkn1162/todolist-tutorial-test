@@ -27,10 +27,10 @@ export interface AddTodoProps {
   onsubmit: () => void;
 }
 
-export function Todo({ text, completed }: TodoProps): JSX.Element {
+export function Todo({ text, completed, onclick }: TodoProps): JSX.Element {
   return (
     <li
-      // onClick={onclick}
+      onClick={onclick}
       style={{ textDecoration: completed ? "line-through" : "none" }}
     >
       {text}
