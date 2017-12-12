@@ -1,5 +1,4 @@
 import * as React from "react";
-import FilterLink from "./containers/FilterLink";
 import {Todo as TodoType} from "./reducers";
 import { List } from "immutable";
 import { VisibilityFilter } from "./actions";

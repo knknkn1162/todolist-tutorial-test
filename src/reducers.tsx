@@ -20,13 +20,6 @@ export const initialState: State = {
   todos: List<Todo>(),
 };
 
-export function td(state: Todo, action: TodoAction): Todo {
-  return {
-    ...state,
-    completed: !state.completed,
-  };
-}
-
 export function todo(state: Todo, action: TodoAction): Todo {
   switch (action.type) {
     case StateType.TOGGLE_TODO:

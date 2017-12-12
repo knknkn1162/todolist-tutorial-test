@@ -1,9 +1,9 @@
 import * as React from "react";
 import * as enzyme from "enzyme";
-import Todo from "../containers/Todo";
-import { StateFromProps } from "../containers/Todo";
+import Todo, { StateFromProps } from "../containers/Todo";
 
 import * as Reducers from "../reducers";
+
 import { createStore, Store } from "redux";
 import { Provider } from "react-redux";
 
