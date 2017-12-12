@@ -20,6 +20,26 @@ export const initialState: State = {
   todos: List<Todo>(),
 };
 
+export function td(state: Todo, action: TodoAction): Todo {
+  return {
+    ...state,
+    completed: !state.completed,
+  };
+}
+
+export function todo(state: Todo, action: TodoAction): Todo {
+  switch (action.type) {
+    case StateType.TOGGLE_TODO:
+      return {
+        ...state,
+        completed: !state.completed,
+      };
+    default:
+      return state;
+  }
+}
+
+/*
 // reducers that might change visibilityFilter
 // and returns the VISIBILITY_FILTERS object that the **new** state consists of.
 // **SET INITIAL STATE**
@@ -63,3 +83,4 @@ export const todoApp = combineReducers<State>({
 });
 
 export default todoApp;
+*/
