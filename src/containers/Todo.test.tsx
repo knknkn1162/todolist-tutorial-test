@@ -6,7 +6,7 @@ import * as Reducers from "../reducers";
 
 import { createStore, Store } from "redux";
 import { Provider } from "react-redux";
-
+import { StateFromProps } from "./Todo";
 import * as Adapter from "enzyme-adapter-react-16";
 
 enzyme.configure({ adapter: new Adapter() });

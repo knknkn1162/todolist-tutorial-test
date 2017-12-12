@@ -1,7 +1,7 @@
 import * as React from "react";
 import Todo from "./containers/Todo";
 
-function App() {
+function App(): JSX.Element {
   return (
     <div>
       <Todo />

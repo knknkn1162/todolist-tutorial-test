@@ -14,12 +14,22 @@ export interface State {
   todos: List<Todo>;
 }
 
+export function initTodo(text: string, completed = false, index = 0): Todo {
+  return {
+    completed: completed,
+    index: index,
+    text: text,
+  };
+}
+
 // note that State can't be **immutable** so, set const.
 export const initialState: State = {
   visibilityFilter: VisibilityFilter.SHOW_ALL,
   todos: List<Todo>(),
 };
 
+
+// reducer
 export function todo(state: Todo, action: TodoAction): Todo {
   switch (action.type) {
     case StateType.TOGGLE_TODO:
