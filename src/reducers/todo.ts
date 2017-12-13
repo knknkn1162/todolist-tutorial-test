@@ -1,10 +1,5 @@
 import { TodoAction, StateType } from "../actions";
-
-export interface Todo {
-  completed: boolean;
-  index: number;
-  text: string;
-}
+import { Todo } from "../states";
 
 export function initTodo(text: string, completed = false, index = 0): Todo {
   return {
