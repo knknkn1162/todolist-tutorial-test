@@ -6,7 +6,7 @@ export interface TodoProps {
   onclick?: () => void;
 }
 
-export function Todo({ text, completed, onclick }: TodoProps): JSX.Element {
+function Todo({ text, completed, onclick }: TodoProps): JSX.Element {
   return (
     <li
       onClick={onclick}
@@ -16,3 +16,5 @@ export function Todo({ text, completed, onclick }: TodoProps): JSX.Element {
     </li>
    );
 }
+
+export default Todo;

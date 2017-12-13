@@ -7,7 +7,6 @@ import { createStore } from "redux";
 import {todo, Todo, initTodo } from "./reducers/todo";
 // import { State } from "./reducers";
 import App from "./App";
-import { addTodo } from "./actions";
 
 // createStore(reducer: Reducer<State>, initialState?: State, [enhancer])
 export const store = createStore<Todo>(todo, initTodo("hello"));

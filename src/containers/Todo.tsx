@@ -1,6 +1,7 @@
 import { connect, Dispatch } from "react-redux";
 import { toggleTodo, TodoAction } from "../actions";
-import { Todo as TodoComponent, TodoProps } from "../components";
+import TodoComponent from "../components/Todo";
+import { TodoProps } from "../components/Todo";
 
 export interface StateFromProps {
   text: string;

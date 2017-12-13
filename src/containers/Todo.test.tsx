@@ -2,7 +2,7 @@ import * as React from "react";
 import * as enzyme from "enzyme";
 import Todo from "../containers/Todo";
 
-import * as Reducers from "../reducers";
+import * as Reducers from "../reducers/todo";
 
 import { createStore, Store } from "redux";
 import { Provider } from "react-redux";

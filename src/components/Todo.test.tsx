@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as enzyme from "enzyme";
-import { Todo } from "./Todo";
+import Todo from "./Todo";
 import { List } from "immutable";
 import * as Adapter from "enzyme-adapter-react-16";
 
