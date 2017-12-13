@@ -1,4 +1,5 @@
-import { initTodo, todo, Todo } from "./todo";
+import { todo } from "./todo";
+import { initTodo } from "../states";
 import { StateType } from "../actions";
 
 it("initTodo test", () => {
@@ -7,7 +8,7 @@ it("initTodo test", () => {
 });
 
 it("todo reducer test", () => {
-  let todoState: Todo = initTodo("hello", true, 0);
+  let todoState = initTodo("hello", true, 0);
   expect(todo(todoState, {type: StateType.TOGGLE_TODO}))
     .toEqual({completed: false, text: "hello", index: 0});
 

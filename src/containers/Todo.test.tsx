@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as enzyme from "enzyme";
 import Todo from "../containers/Todo";
+import { Todo as TodoState} from "../states";
 
 import * as Reducers from "../reducers/todo";
 
@@ -12,7 +13,7 @@ enzyme.configure({ adapter: new Adapter() });
 
 it("Todo test", () => {
   // Reducers.todo: export function todo(state: Todo, action: TodoAction): Todo
-  const store: Store<Reducers.Todo> = createStore(Reducers.todo, {completed: true, text: "hello", index: 0});
+  const store: Store<TodoState> = createStore(Reducers.todo, {completed: true, text: "hello", index: 0});
   // mount: (JSX.Element) => enzyme.ReactWrapper
   const hello: enzyme.ReactWrapper = enzyme.mount(
     <Provider store={store}>
