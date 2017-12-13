@@ -4,7 +4,7 @@ import * as ReactDOM from "react-dom";
 // wire up our props with our container
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-import {todo, Todo, initTodo } from "./reducers";
+import {todo, Todo, initTodo } from "./reducers/todo";
 // import { State } from "./reducers";
 import App from "./App";
 import { addTodo } from "./actions";

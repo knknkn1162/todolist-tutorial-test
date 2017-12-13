@@ -1,5 +1,5 @@
-import { initTodo, todo, Todo } from "./reducers";
-import { StateType } from "./actions";
+import { initTodo, todo, Todo } from "./todo";
+import { StateType } from "../actions";
 
 it("initTodo test", () => {
   expect(initTodo("hello")).toEqual({completed: false, text: "hello", index: 0});

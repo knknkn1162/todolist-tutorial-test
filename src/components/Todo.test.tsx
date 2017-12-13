@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as enzyme from "enzyme";
-import { Todo } from "./components";
+import { Todo } from "./Todo";
 import { List } from "immutable";
 import * as Adapter from "enzyme-adapter-react-16";
 
@@ -18,17 +18,3 @@ it("Todo onclick test", () => {
   hello.find("li").simulate("click");
   expect(hello.find("li").props().style.textDecoration).toEqual("line-through");
 });
-
-/*
-it("TodoList test", () => () => {
-  const hello = enzyme.shallow(
-    <TodoList
-      todos={
-        List([
-          <Todo text="hello" completed={true} index={0} />,
-          <Todo text="good bye" completed={false} index={1} />,
-        ])}
-    />
-  );
-});
-*/
