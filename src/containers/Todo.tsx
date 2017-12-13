@@ -21,7 +21,7 @@ function mapStateToProps({ text, completed }: StateFromProps): StateFromProps {
 function mapDispatchToProps(dispatch: Dispatch<TodoAction>): DispatchFromProps {
   return {
     onclick: () => {
-      dispatch(toggleTodo(0));
+      dispatch(toggleTodo());
     },
   };
 }

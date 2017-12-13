@@ -17,7 +17,6 @@ export interface AddTodoAction {
 }
 
 export interface ToggleTodoAction {
-  index: number;
   type: StateType.TOGGLE_TODO;
 }
 
@@ -38,9 +37,8 @@ export function addTodo(text: string): AddTodoAction {
   };
 }
 
-export function toggleTodo(index: number): ToggleTodoAction {
+export function toggleTodo(): ToggleTodoAction {
   return {
-    index: index,
     type: StateType.TOGGLE_TODO,
   };
 }

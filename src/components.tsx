@@ -3,12 +3,6 @@ import {Todo as TodoType} from "./reducers";
 import { List } from "immutable";
 import { VisibilityFilter } from "./actions";
 
-export interface LinkProps {
-  active: boolean;
-  children?: string;
-  onclick?: () => void;
-}
-
 export interface TodoProps {
   text: string;
   completed: boolean;
@@ -26,6 +20,12 @@ export interface AddTodoProps {
   onsubmit: () => void;
 }
 
+export interface LinkProps {
+  active: boolean;
+  children?: string;
+  onclick?: () => void;
+}
+
 export function Todo({ text, completed, onclick }: TodoProps): JSX.Element {
   return (
     <li
@@ -41,10 +41,19 @@ export function Todo({ text, completed, onclick }: TodoProps): JSX.Element {
 export function TodoList({todos, onTodoClick}: TodoListProps): JSX.Element {
   return (
     <ul>
-      {todos.map((todo) => <Todo key={todo.index} {...todo} onclick={() => onTodoClick(todo.index)} />).toArray()}
+      {todos.map((todo) =>
+        <Todo
+          key={todo.index}
+          {...todo}
+          onclick={() => onTodoClick(todo.index)}
+        />
+      ).toArray()}
     </ul>
   );
 }
+*/
+
+/*
 
 export interface FooterOwnProps {
   filter: VisibilityFilter;
