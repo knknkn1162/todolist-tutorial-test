@@ -11,3 +11,13 @@ export function initTodo(text: string, completed = false, index = 0): Todo {
     text: text,
   };
 }
+
+let nextTodoId = 0;
+
+export function addTodo(text: string): Todo {
+  return {
+    completed: false,
+    index: nextTodoId++,
+    text: text,
+  };
+}
