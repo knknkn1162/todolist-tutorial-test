@@ -64,6 +64,8 @@ see also https://github.com/Microsoft/TypeScript-React-Starter
 npm install --save redux react-redux @types/react-redux
 ```
 
+### test
+
 + test redux with jest
 
 see https://github.com/facebook/jest#using-typescript:
@@ -91,6 +93,34 @@ Ran all test suites.
 
 ```bash
 # you should load `@types/enzyme-adapter-react-16` in typescript.
-npm install --save-dev enzyme @types/enzyme react-addons-test-utils enzyme-adapter-react-16 @types/enzyme-adapter-react-16
+npm install --save enzyme @types/enzyme enzyme-adapter-react-16 @types/enzyme-adapter-react-16
+# If you are using a React below version 15.5.0, you will also need to install react-addons-test-utils.
+# npm install --save-dev react-addons-test-utils
 ```
 
++ sinon
+
+```bash
+npm install --save sinon @types/sinon
+```
+
+SinonJS supports spy, stab and mock. You can write event test like this:
+
+```typescript
+import * as React from 'react';
+import * as enzyme from 'enzyme';
+import Component from './Component';
+import * as sinon from 'sinon';
+
+import * as Adapter from "enzyme-adapter-react-16";
+
+it("onSubmit in form", () => {
+  const onSubmit = sinon.spy();
+  const wrapper = enzyme.shallow(<Component onSubmit={onSubmit}/>);
+  wrapper.setState({input: "hello"});
+  wrapper.find("form").simulate("submit", { preventDefault() {} });
+
+  expect(onSubmit.callCount).toEqual(1);
+  expect(onSubmit.args[0]).toEqual(["hello"]);
+});
+```
